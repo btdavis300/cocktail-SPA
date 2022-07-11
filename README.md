@@ -5,9 +5,15 @@ WeTail is a single-page application that contains all-things related to cocktail
 User Stories:
 
 -As a user, I can search for a cocktail by name. Results will pull up images of cocktails, and I can click on the image to view the ingredients and recipe for the cocktail.
+
 -As a user, I can navigate through cocktail categories (by alcohol, by type of drink, alcoholic vs. non-alcoholic)
--As a user, I can post cocktail creations
--As a user, I can post reviews, including rating and descriptions as well as “liking” individual reviews.
+
+-As a user, I can post cocktail creations.
+
+-As a user, I can post reviews, including rating and descriptions.
+
+-As a user, I can like individual cocktails, as well as adding them to "My Favorites."
+
 When the page first loads, as a user, I can view popular drinks.
 
 Wireframe:
