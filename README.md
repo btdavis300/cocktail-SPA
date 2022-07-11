@@ -12,5 +12,8 @@ When the page first loads, as a user, I can view popular drinks.
 
 Wireframe:
 
+![Phase-1-project-wireframe](https://user-images.githubusercontent.com/100324379/178326519-233104f2-bea7-4aef-b1fa-b027683b7e5a.jpg)
 
+![Phase-1-project-wireframe 2](https://user-images.githubusercontent.com/100324379/178326555-22f9e735-549d-443d-b110-2ec64b349128.jpg)
 
+![Phase-1-project-wireframe 3](https://user-images.githubusercontent.com/100324379/178326709-0e3f1fe2-1542-4958-bf99-28594b575e6e.jpg)
