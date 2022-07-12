@@ -39,11 +39,13 @@ let cocktailName = document.getElementById('cocktail-name')
 let cocktailImage = document.getElementById('cocktail-image')
 let cocktailIngredients = document.getElementById('ingredients')
 let cocktailInstructions = document.getElementById('instructions')
+let browse = document.getElementById('browse')
 
 //Event Listeners
 forwardButton.addEventListener('click', forwardPage)
 backButton.addEventListener('click', backwardPage)
 nonAlcoholic.addEventListener('click', fetchNonAlcoholic)
+browse.addEventListener('click', fetchTwentyDrinks)
 
 
 //Navigational Bar Functions
@@ -84,7 +86,6 @@ function renderImages(drinksArr) {
 }
 
 function displayCocktail(drink) {
-    console.log(drink)
     cocktailName.textContent = drink.strDrink
     cocktailImage.src = drink.strDrinkThumb
     cocktailIngredients.textContent = drink.strIngredient1
