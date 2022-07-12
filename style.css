@@ -24,9 +24,11 @@ header {
 #nav-bar-box {
     display: flex;
     justify-content: center;
+    margin: 40px;
 }
 
 #nav-bar-container {
+    position: sticky;
     display: flex;
     justify-content: center;
     width: 75vw;
@@ -57,7 +59,7 @@ header {
     cursor: pointer;
 }
 
-#alcohol-content {
+.expand-content {
     display: none;
     background-color: rgb(216, 211, 211);
     border-radius: 28px;
@@ -80,7 +82,7 @@ li:hover {
     margin: 40px;
 }
 
-.displays{
+.displays {
     display: flex;
     flex-direction: column;
 }
@@ -88,9 +90,8 @@ li:hover {
 /* Button Styles */
 #button {
     display: flex;
-    justify-content: flex-end;
-    padding-right: 100px;
-    padding-bottom: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 button {
@@ -114,10 +115,11 @@ button:active {
 }
 
 /* Image Thumbnail Section Styles */
-#browse-container{
-    display:flex;
+#browse-container {
+    display: flex;
     justify-content: center;
 }
+
 #browse {
     display: flex;
     justify-content: center;
@@ -125,8 +127,7 @@ button:active {
     padding: 5px;
     font-size: 18px;
     border-radius: 28px;
-    border-radius: 28px;
-    background: #f9fff4;
+    background: linear-gradient(145deg, #ffffff, #e0e6dc);
     box-shadow: 7px 7px 14px #cfd4cb,
         -7px -7px 14px #ffffff;
 }

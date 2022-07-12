@@ -32,7 +32,9 @@ let forwardButton = document.getElementById("forward")
 let backButton = document.getElementById('backward')
 let nonAlcoholic = document.getElementById('nonAlcoholic')
 let alcoholCat = document.getElementById('alcoholCat')
-let alcoholContent = document.getElementById('alcohol-content')
+let alcoholList = document.getElementById('alcoholList')
+let drinkTypes = document.getElementById('drinkTypes')
+let drinkList = document.getElementById('drinkList')
 
 //Event Listeners
 forwardButton.addEventListener('click', forwardPage)
@@ -42,12 +44,18 @@ nonAlcoholic.addEventListener('click', fetchNonAlcoholic)
 
 //Navigational Bar Functions
 alcoholCat.onmouseover = function () {
-    alcoholContent.style.display = "flex"
+    alcoholList.style.display = "flex"
 }
 alcoholCat.onmouseout = function () {
-    alcoholContent.style.display = "none"
+    alcoholList.style.display = "none"
 }
 
+drinkTypes.onmouseover = function () {
+    drinkList.style.display = "flex"
+}
+drinkTypes.onmouseout = function () {
+    drinkList.style.display = "none"
+}
 
 //Render Image Functions
 function renderImages(drinksArr) {
