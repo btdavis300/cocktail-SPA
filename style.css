@@ -61,15 +61,24 @@ h3#alchoholCat.nav-bar {
     justify-content: center;
 }
 
-/* Image Thumbnail Styles */
+/* Image Thumbnail Section Styles */
+h4 {
+    display: flex;
+    justify-content: center;
+}
+
+#cocktail-image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 #cocktail-image-container img {
-    width: 150px;
+    width: 20%;
     border: solid rgba(0, 0, 0, .5) 1px;
     margin: 0.3em;
     border-radius: 28px;
     background: linear-gradient(145deg, #ffffff, #e6e6e6);
     box-shadow: 7px 7px 14px #d4d4d4,
         -7px -7px 14px #ffffff;
-    display: flex;
-    flex-wrap: wrap;
 }
