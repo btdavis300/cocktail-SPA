@@ -28,17 +28,18 @@ header {
 #nav-bar-container {
     display: flex;
     justify-content: center;
-    width: 65vw;
+    width: 75vw;
+    height: 50px;
     border-radius: 28px;
     background: linear-gradient(145deg, #ffffff, #e6e6e6);
     box-shadow: 7px 7px 14px #d4d4d4,
         -7px -7px 14px #ffffff;
-
 }
 
 .nav-bar {
     margin: 10px;
     padding: 5px;
+    text-align: center;
     border-radius: 28px;
     background: #ffffff;
     box-shadow: inset 7px 7px 14px #d4d4d4,
@@ -50,15 +51,48 @@ header {
     cursor: pointer;
 }
 
-h3#alchoholCat.nav-bar {
-    display: flex;
+#alcohol-content {
+    display: none;
+    background-color: rgb(216, 211, 211);
+    border-radius: 28px;
+    text-align: center;
     flex-direction: column;
+}
+
+li {
+    list-style-type: none;
 }
 
 /* Cocktail Container Styles */
 #display-cocktail-container {
     display: flex;
     justify-content: center;
+}
+
+/* Button Styles */
+#button {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 100px;
+}
+
+button {
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 10px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+        -6px -6px 12px #ffffff;
+    margin: 5px;
+}
+
+button:active {
+    color: #674;
+    box-shadow: inset 4px 4px 12px #c5c5c5,
+        inset -4px -4px 12px #ffffff;
 }
 
 /* Image Thumbnail Section Styles */

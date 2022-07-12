@@ -76,7 +76,30 @@ function backwardPage() {
 }
 
 function expandAlchoholCat() {
-    console.log("I have been clicked!")
+    console.log("i was clicked!")
+    // const div = document.createElement('div')
+    // const brandy = document.createElement('p')
+    // const gin = document.createElement('p')
+    // const rum = document.createElement('p')
+    // const tequila = document.createElement('p')
+    // const vodka = document.createElement('p')
+    // const whiskey = document.createElement('p')
+
+    // brandy.textContent = "Brandy"
+    // gin.textContent = "Gin"
+    // rum.textContent = "Rum"
+    // tequila.textContent = "Tequila"
+    // vodka.textContent = "Vodka"
+    // whiskey.textContent = "Whiskey"
+
+    // div.appendChild(brandy)
+    // div.appendChild(gin)
+    // div.appendChild(rum)
+    // div.appendChild(tequila)
+    // div.appendChild(vodka)
+    // div.appendChild(whiskey)
+
+    // alcoholCat.appendChild(div)
 }
 
 //Fetch Functions
