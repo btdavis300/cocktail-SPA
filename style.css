@@ -1,13 +1,70 @@
+body {
+    font-family: "Bodoni MT", Didot, "Didot LT STD", "Book Antiqua", Garamond, "Times New Roman", serif;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+}
+
 #wetail-icon {
     width: 50px;
     height: 50px;
 }
 
+/* Search Bar Styles */
+#search-bar-container {
+    display: flex;
+    justify-content: center;
+    margin: 7px;
+}
+
+/* Navigation Bar Styles */
+#nav-bar-box {
+    display: flex;
+    justify-content: center;
+}
+
+#nav-bar-container {
+    display: flex;
+    justify-content: center;
+    width: 65vw;
+    border-radius: 28px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 7px 7px 14px #d4d4d4,
+        -7px -7px 14px #ffffff;
+
+}
+
+.nav-bar {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 28px;
+    background: #ffffff;
+    box-shadow: inset 7px 7px 14px #d4d4d4,
+        inset -7px -7px 14px #ffffff;
+}
+
+.nav-bar:hover {
+    color: rgb(0, 0, 0, .5);
+    cursor: pointer;
+}
+
+/* Cocktail Container Styles */
+#display-cocktail-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Image Thumbnail Styles */
 #cocktail-image-container img {
     width: 150px;
-    border: solid black 2px;
+    border: solid rgba(0, 0, 0, .5) 1px;
     margin: 0.3em;
-    border-radius: 0.5em;
+    border-radius: 28px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 7px 7px 14px #d4d4d4,
+        -7px -7px 14px #ffffff;
     display: flex;
     flex-wrap: wrap;
 }
