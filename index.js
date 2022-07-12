@@ -30,10 +30,14 @@ const baseURL = ("http://localhost:3000/drinks")
 let page = 1
 let forwardButton = document.getElementById("forward")
 let backButton = document.getElementById('backward')
+let nonAlcoholic = document.getElementById('nonAlcoholic')
+let alcoholCat = document.getElementById('alcoholCat')
 
 //Event Listeners
 forwardButton.addEventListener('click', forwardPage)
 backButton.addEventListener('click', backwardPage)
+nonAlcoholic.addEventListener('click', fetchNonAlcoholic)
+alcoholCat.addEventListener('click', expandAlchoholCat)
 
 //Render Image Functions
 function renderImages(drinksArr) {
@@ -71,12 +75,17 @@ function backwardPage() {
     }
 }
 
+function expandAlchoholCat() {
+    console.log("I have been clicked!")
+}
+
 //Fetch Functions
 function fetchAllDrinks() {
     fetch(baseURL)
         .then(r => r.json())
         .then(drinksArr => {
-            drinksArr.forEach(drink => console.log(drink));
+            const result = drinksArr.filter(drink => drink.strAlcoholic == "Non alcoholic" || drink.strAlcoholic == "Optional alcohol")
+            console.log(result);
         })
 }
 
@@ -86,8 +95,18 @@ function fetchTwentyDrinks(page = 1) {
         .then(drinksArr => renderImages(drinksArr))
 }
 
+function fetchNonAlcoholic() {
+    fetch(baseURL)
+        .then(r => r.json())
+        .then(drinksArr => {
+            const result = drinksArr.filter(drink => drink.strAlcoholic == "Non alcoholic" || drink.strAlcoholic == "Optional alcohol")
+            renderImages(result)
+
+        })
+}
+
 function appStarter() {
-    //fetchDrinks()
+    //fetchAllDrinks()
     fetchTwentyDrinks()
 }
 

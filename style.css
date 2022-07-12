@@ -50,6 +50,11 @@ header {
     cursor: pointer;
 }
 
+h3#alchoholCat.nav-bar {
+    display: flex;
+    flex-direction: column;
+}
+
 /* Cocktail Container Styles */
 #display-cocktail-container {
     display: flex;
