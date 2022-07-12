@@ -42,14 +42,18 @@ header {
     margin: 10px;
     padding: 5px;
     text-align: center;
-    border-radius: 28px;
-    background: linear-gradient(145deg, #e0e6dc, #ffffff);
-    box-shadow: 7px 7px 14px #cfd4cb,
-        -7px -7px 14px #ffffff;
+    border-radius: 0.5em;
+    background: #f9fff4;
+    border: 1px solid #f9fff4;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+        -6px -6px 12px #ffffff;
 }
 
 .nav-bar:hover {
-    color: rgb(0, 0, 0, .5);
+    color: #674;
+    box-shadow: inset 4px 4px 12px #c5c5c5,
+        inset -4px -4px 12px #ffffff;
     cursor: pointer;
 }
 
