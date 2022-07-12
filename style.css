@@ -69,6 +69,10 @@ li {
     list-style-type: none;
 }
 
+li:hover {
+    color: #000000;
+}
+
 /* Cocktail Container Styles */
 #display-cocktail-container {
     display: flex;
@@ -93,6 +97,7 @@ button {
     box-shadow: 6px 6px 12px #c5c5c5,
         -6px -6px 12px #ffffff;
     margin: 5px;
+    cursor: pointer;
 }
 
 button:active {

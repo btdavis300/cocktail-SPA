@@ -32,12 +32,22 @@ let forwardButton = document.getElementById("forward")
 let backButton = document.getElementById('backward')
 let nonAlcoholic = document.getElementById('nonAlcoholic')
 let alcoholCat = document.getElementById('alcoholCat')
+let alcoholContent = document.getElementById('alcohol-content')
 
 //Event Listeners
 forwardButton.addEventListener('click', forwardPage)
 backButton.addEventListener('click', backwardPage)
 nonAlcoholic.addEventListener('click', fetchNonAlcoholic)
-alcoholCat.addEventListener('click', expandAlchoholCat)
+
+
+//Navigational Bar Functions
+alcoholCat.onmouseover = function () {
+    alcoholContent.style.display = "flex"
+}
+alcoholCat.onmouseout = function () {
+    alcoholContent.style.display = "none"
+}
+
 
 //Render Image Functions
 function renderImages(drinksArr) {
@@ -58,6 +68,7 @@ function renderImages(drinksArr) {
 
 }
 
+
 //Button Functions
 function forwardPage() {
     if (page < 10) {
@@ -75,32 +86,6 @@ function backwardPage() {
     }
 }
 
-function expandAlchoholCat() {
-    console.log("i was clicked!")
-    // const div = document.createElement('div')
-    // const brandy = document.createElement('p')
-    // const gin = document.createElement('p')
-    // const rum = document.createElement('p')
-    // const tequila = document.createElement('p')
-    // const vodka = document.createElement('p')
-    // const whiskey = document.createElement('p')
-
-    // brandy.textContent = "Brandy"
-    // gin.textContent = "Gin"
-    // rum.textContent = "Rum"
-    // tequila.textContent = "Tequila"
-    // vodka.textContent = "Vodka"
-    // whiskey.textContent = "Whiskey"
-
-    // div.appendChild(brandy)
-    // div.appendChild(gin)
-    // div.appendChild(rum)
-    // div.appendChild(tequila)
-    // div.appendChild(vodka)
-    // div.appendChild(whiskey)
-
-    // alcoholCat.appendChild(div)
-}
 
 //Fetch Functions
 function fetchAllDrinks() {
