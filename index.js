@@ -35,6 +35,10 @@ let alcoholCat = document.getElementById('alcoholCat')
 let alcoholList = document.getElementById('alcoholList')
 let drinkTypes = document.getElementById('drinkTypes')
 let drinkList = document.getElementById('drinkList')
+let cocktailName = document.getElementById('cocktail-name')
+let cocktailImage = document.getElementById('cocktail-image')
+let cocktailIngredients = document.getElementById('ingredients')
+let cocktailInstructions = document.getElementById('instructions')
 
 //Event Listeners
 forwardButton.addEventListener('click', forwardPage)
@@ -72,10 +76,20 @@ function renderImages(drinksArr) {
         cocktailThumbnail.src = drink.strDrinkThumb
         cocktailThumbnail.classList.add("imageItem")
         cocktailImageContainer.appendChild(cocktailThumbnail)
+        cocktailThumbnail.addEventListener('click', () => {
+            displayCocktail(drink)
+        })
     });
 
 }
 
+function displayCocktail(drink) {
+    console.log(drink)
+    cocktailName.textContent = drink.strDrink
+    cocktailImage.src = drink.strDrinkThumb
+    cocktailIngredients.textContent = drink.strIngredient1
+    cocktailInstructions.textContent = drink.strInstructions
+}
 
 //Button Functions
 function forwardPage() {
@@ -108,7 +122,10 @@ function fetchAllDrinks() {
 function fetchTwentyDrinks(page = 1) {
     fetch(baseURL + `/?_limit=20&_page=${page}`)
         .then(r => r.json())
-        .then(drinksArr => renderImages(drinksArr))
+        .then(drinksArr => {
+            renderImages(drinksArr)
+            displayCocktail(drinksArr[0])
+        })
 }
 
 function fetchNonAlcoholic() {
@@ -117,7 +134,6 @@ function fetchNonAlcoholic() {
         .then(drinksArr => {
             const result = drinksArr.filter(drink => drink.strAlcoholic == "Non alcoholic" || drink.strAlcoholic == "Optional alcohol")
             renderImages(result)
-
         })
 }
 
