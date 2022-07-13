@@ -25,6 +25,23 @@ header {
     margin-right: 80px;
 }
 
+input[type=text] {
+    border-radius: 10px;
+    background: #f9fff4;
+    box-shadow: 7px 7px 14px #cfd4cb,
+        -7px -7px 14px #ffffff;
+    width: 130px;
+    padding-left: 5px;
+    padding-right: 5px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  /* When the input field gets focus, change its width to 100% */
+  input[type=text]:focus {
+    width: 50%;
+  }
+
 /* Navigation Bar Styles */
 #nav-bar-box {
     position: sticky;
@@ -44,7 +61,6 @@ h3 {
     justify-content: space-evenly;
     width: 75vw;
     height: 50px;
-    border-radius: 28px;
     border-radius: 28px;
     background: #f9fff4;
     box-shadow: 7px 7px 14px #cfd4cb,
