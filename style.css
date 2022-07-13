@@ -6,6 +6,12 @@ body {
 /* Header Styles */
 header {
     display: flex;
+    justify-content: space-between;
+}
+
+#title {
+    display: flex;
+    flex-direction: row;
 }
 
 #wetail-icon {
@@ -15,16 +21,15 @@ header {
 
 /* Search Bar Styles */
 #search-bar-container {
-    display: flex;
-    justify-content: center;
-    margin: 7px;
+    margin-top: 40px;
+    margin-right: 80px;
 }
 
 /* Navigation Bar Styles */
 #nav-bar-box {
     display: flex;
     justify-content: center;
-    margin: 40px;
+    margin-top: 40px;
 }
 
 h3 {
@@ -76,7 +81,7 @@ li {
     list-style-type: none;
 }
 
-li:hover {
+.li:hover {
     color: #000000;
 }
 
@@ -99,8 +104,8 @@ li:hover {
 }
 
 #cocktail-image {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     border-radius: 28px;
     background: linear-gradient(145deg, #ffffff, #e6e6e6);
     box-shadow: 7px 7px 14px #d4d4d4,

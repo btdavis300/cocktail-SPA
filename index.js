@@ -37,18 +37,10 @@ let drinkTypes = document.getElementById('drinkTypes')
 let drinkList = document.getElementById('drinkList')
 let cocktailName = document.getElementById('cocktail-name')
 let cocktailImage = document.getElementById('cocktail-image')
-let cocktailIngredients = document.getElementById('ingredients')
 let cocktailInstructions = document.getElementById('instructions')
 let browse = document.getElementById('browse')
 let searchBar = document.getElementById('search-bar')
 let searchForm = document.getElementById('search-bar-form')
-
-let brandy = document.getElementById('brandy')
-let gin = document.getElementById('gin')
-let rum = document.getElementById('rum')
-let tequila = document.getElementById('tequila')
-let vodka = document.getElementById('vodka')
-let whiskey = document.getElementById('whiskey')
 
 //Event Listeners
 forwardButton.addEventListener('click', forwardPage)
@@ -68,9 +60,9 @@ searchForm.addEventListener('submit', (e) => {
 alcoholCat.onmouseover = function () {
     alcoholList.style.display = "flex"
 }
-// alcoholCat.onmouseout = function () {
-//     alcoholList.style.display = "none"
-// }
+alcoholCat.onmouseout = function () {
+    alcoholList.style.display = "none"
+}
 
 drinkTypes.onmouseover = function () {
     drinkList.style.display = "flex"
@@ -82,6 +74,13 @@ drinkTypes.onmouseout = function () {
 function grabCategory(e) {
     const alcohol = e.target.textContent
     filterCategory(alcohol)
+    alcoholList.style.display = "none"
+}
+
+function grabType(e) {
+    const alcohol = e.target.textContent
+    filterType(alcohol)
+    drinkList.style.display = "none"
 }
 
 //Render Image Functions
@@ -109,8 +108,23 @@ function renderImages(drinksArr) {
 function displayCocktail(drink) {
     cocktailName.textContent = drink.strDrink
     cocktailImage.src = drink.strDrinkThumb
-    cocktailIngredients.textContent = drink.strIngredient1
     cocktailInstructions.textContent = drink.strInstructions
+
+    const ing1 = document.getElementById('ing1')
+    const ing2 = document.getElementById('ing2')
+    const ing3 = document.getElementById('ing3')
+    const ing4 = document.getElementById('ing4')
+    const ing5 = document.getElementById('ing5')
+    const ing6 = document.getElementById('ing6')
+    const ing7 = document.getElementById('ing7')
+
+    ing1.textContent = drink.strIngredient1
+    ing2.textContent = drink.strIngredient2
+    ing3.textContent = drink.strIngredient3
+    ing4.textContent = drink.strIngredient4
+    ing5.textContent = drink.strIngredient5
+    ing6.textContent = drink.strIngredient6
+    ing7.textContent = drink.strIngredient7
 }
 
 //Button Functions
@@ -154,19 +168,44 @@ function fetchSearch(searchInput) {
     fetch(baseURL)
         .then(r => r.json())
         .then(drinksArr => {
-            // drinksArr.forEach(drink =>
-            //     drink.strDrink.toUpperCase())
             const result = drinksArr.find(drink => drink.strDrink.toUpperCase() == searchInput)
             displayCocktail(result)
         })
 }
 
 function filterCategory(alcohol) {
-    fetch(baseURL + `/?_limit=20&_page=${page}`)
+    fetch(baseURL)
         .then(r => r.json())
         .then(drinksArr => {
-            const result = drinksArr.filter(drink => drink.strIngredient1 == alcohol)
+            const result = drinksArr.filter(drink => drink.alcCategory == alcohol)
             renderImages(result)
+            displayCocktail(result[0])
+        })
+}
+
+function filterType(alcohol) {
+    fetch(baseURL)
+        .then(r => r.json())
+        .then(drinksArr => {
+            const result = drinksArr.filter(drink => drink.strCategory == alcohol)
+            renderImages(result)
+            displayCocktail(result[0])
+        })
+}
+
+function filterMisc() {
+    fetch(baseURL)
+        .then(r => r.json())
+        .then(drinksArr => {
+            const result = drinksArr.filter(drink =>
+                drink.strCategory == "Punch / Party Drink" ||
+                drink.strCategory == "Other/Unknown" ||
+                drink.strCategory == "Beer" ||
+                drink.strCategory == "Homemade Liqueur" ||
+                drink.strCategory == "Shake")
+            renderImages(result)
+            displayCocktail(result[0])
+            drinkList.style.display = "none"
         })
 }
 

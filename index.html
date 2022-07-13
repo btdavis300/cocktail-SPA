@@ -13,35 +13,36 @@
 
 <body>
     <header>
-        <img src="cocktailicon.png" alt="WeTail icon" id="wetail-icon">
-        <h1 id="wetail-logo">WeTail</h1>
+        <div id="title">
+            <img src="cocktailicon.png" alt="WeTail icon" id="wetail-icon">
+            <h1 id="wetail-logo">WeTail</h1>
+        </div>
+        <div id="search-bar-container">
+            <form id="search-bar-form">
+                <input type="text" name="search-bar" id="search-bar" placeholder="Search by name:">
+                <input type="submit" value='Search'>
+            </form>
+        </div>
     </header>
-    <div id="search-bar-container">
-        <form id="search-bar-form">
-            <input type="text" name="search-bar" id="search-bar" placeholder="Search by name:">
-
-            <input type="submit" value='Search'>
-        </form>
-    </div>
     <div id="nav-bar-box">
         <div id="nav-bar-container">
             <h3 class="nav-bar" id="alcoholCat">Alcohol Categories
                 <div class="expand-content" id="alcoholList">
                     <li id="brandy" onclick="grabCategory(event)">Brandy</li>
-                    <li id="gin" onclick="grabCategory(event)">Gin</li>
-                    <li id="rum" onclick="grabCategory(event)">Rum</li>
-                    <li id="tequila" onclick="grabCategory(event)">Tequila</li>
-                    <li id="vodka" onclick="grabCategory(event)">Vodka</li>
-                    <li id="whiskey" onclick="grabCategory(event)">Whiskey</li>
+                    <li class="li" onclick="grabCategory(event)">Gin</li>
+                    <li class="li" onclick="grabCategory(event)">Rum</li>
+                    <li class="li" onclick="grabCategory(event)">Tequila</li>
+                    <li class="li" onclick="grabCategory(event)">Vodka</li>
+                    <li class="li" onclick="grabCategory(event)">Whiskey</li>
                 </div>
             </h3>
             <h3 class="nav-bar" id="drinkTypes">Drink Types
                 <div class="expand-content" id="drinkList">
-                    <li id="cocktailType">Cocktail</li>
-                    <li id="coffeeTea">Coffee/Tea</li>
-                    <li id="ordinaryDrink">Ordinary Drink</li>
-                    <li id="misc">Misc.</li>
-                    <li id="shotss">Shots</li>
+                    <li class="li" onclick="grabType(event)">Cocktail</li>
+                    <li class="li" onclick="grabType(event)">Coffee / Tea</li>
+                    <li class="li" onclick="grabType(event)">Ordinary Drink</li>
+                    <li class="li" onclick="filterMisc()">Misc.</li>
+                    <li class="li" onclick="grabType(event)">Shot</li>
                 </div>
             </h3>
             <h3 class="nav-bar" id="nonAlcoholic">Non-Alcoholic</h3>
@@ -60,7 +61,15 @@
         <div class="displays">
             <div class="cocktail-contents">
                 <h5>Ingredients</h5>
-                <p id="ingredients">List of items</p>
+                <ol>
+                    <li id="ing1"></li>
+                    <li id="ing2"></li>
+                    <li id="ing3"></li>
+                    <li id="ing4"></li>
+                    <li id="ing5"></li>
+                    <li id="ing6"></li>
+                    <li id="ing7"></li>
+                </ol>
             </div>
             <div class="cocktail-contents">
                 <h5>Make It Yourself</h5>
