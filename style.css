@@ -27,6 +27,8 @@ header {
 
 /* Navigation Bar Styles */
 #nav-bar-box {
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: center;
     margin-top: 40px;

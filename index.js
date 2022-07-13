@@ -100,8 +100,12 @@ function renderImages(drinksArr) {
         cocktailImageContainer.appendChild(cocktailThumbnail)
         cocktailThumbnail.addEventListener('click', () => {
             displayCocktail(drink)
+            cocktailImageContainer.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+            })
         })
     });
+
 
 }
 
@@ -125,6 +129,7 @@ function displayCocktail(drink) {
     ing5.textContent = drink.strIngredient5
     ing6.textContent = drink.strIngredient6
     ing7.textContent = drink.strIngredient7
+
 }
 
 //Button Functions
