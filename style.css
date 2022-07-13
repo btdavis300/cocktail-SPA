@@ -49,7 +49,7 @@ h3 {
     padding: 5px;
     text-align: center;
     border-radius: 0.5em;
-    background: #f9fff4;
+    background: rgb(249, 255, 244);
     border: 1px solid #f9fff4;
     transition: all .3s;
     box-shadow: 6px 6px 12px #c5c5c5,
@@ -57,7 +57,7 @@ h3 {
 }
 
 .nav-bar:hover {
-    color: #674;
+    color: rgb(102, 119, 68);
     box-shadow: inset 4px 4px 12px #c5c5c5,
         inset -4px -4px 12px #ffffff;
     cursor: pointer;
@@ -65,8 +65,9 @@ h3 {
 
 .expand-content {
     display: none;
-    background-color: rgb(216, 211, 211);
-    border-radius: 28px;
+    background-color: rgba(249, 255, 244, 0.642);
+    border-bottom-right-radius: 28px;
+    border-bottom-left-radius: 28px;
     text-align: center;
     flex-direction: column;
 }

@@ -43,17 +43,23 @@ let browse = document.getElementById('browse')
 let searchBar = document.getElementById('search-bar')
 let searchForm = document.getElementById('search-bar-form')
 
+let brandy = document.getElementById('brandy')
+let gin = document.getElementById('gin')
+let rum = document.getElementById('rum')
+let tequila = document.getElementById('tequila')
+let vodka = document.getElementById('vodka')
+let whiskey = document.getElementById('whiskey')
+
 //Event Listeners
 forwardButton.addEventListener('click', forwardPage)
 backButton.addEventListener('click', backwardPage)
 nonAlcoholic.addEventListener('click', fetchNonAlcoholic)
 browse.addEventListener('click', fetchTwentyDrinks)
 
-
 //Search Functions
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    let searchInput = searchBar.value
+    let searchInput = searchBar.value.toUpperCase()
     fetchSearch(searchInput)
 
 })
@@ -62,15 +68,20 @@ searchForm.addEventListener('submit', (e) => {
 alcoholCat.onmouseover = function () {
     alcoholList.style.display = "flex"
 }
-alcoholCat.onmouseout = function () {
-    alcoholList.style.display = "none"
-}
+// alcoholCat.onmouseout = function () {
+//     alcoholList.style.display = "none"
+// }
 
 drinkTypes.onmouseover = function () {
     drinkList.style.display = "flex"
 }
 drinkTypes.onmouseout = function () {
     drinkList.style.display = "none"
+}
+
+function grabCategory(e) {
+    const alcohol = e.target.textContent
+    filterCategory(alcohol)
 }
 
 //Render Image Functions
@@ -121,15 +132,6 @@ function backwardPage() {
 
 
 //Fetch Functions
-function fetchAllDrinks() {
-    fetch(baseURL)
-        .then(r => r.json())
-        .then(drinksArr => {
-            const result = drinksArr.filter(drink => drink.strAlcoholic == "Non alcoholic" || drink.strAlcoholic == "Optional alcohol")
-            console.log(result);
-        })
-}
-
 function fetchTwentyDrinks(page = 1) {
     fetch(baseURL + `/?_limit=20&_page=${page}`)
         .then(r => r.json())
@@ -152,13 +154,23 @@ function fetchSearch(searchInput) {
     fetch(baseURL)
         .then(r => r.json())
         .then(drinksArr => {
-            const result = drinksArr.find(drink => drink.strDrink == searchInput)
+            // drinksArr.forEach(drink =>
+            //     drink.strDrink.toUpperCase())
+            const result = drinksArr.find(drink => drink.strDrink.toUpperCase() == searchInput)
             displayCocktail(result)
         })
 }
 
+function filterCategory(alcohol) {
+    fetch(baseURL + `/?_limit=20&_page=${page}`)
+        .then(r => r.json())
+        .then(drinksArr => {
+            const result = drinksArr.filter(drink => drink.strIngredient1 == alcohol)
+            renderImages(result)
+        })
+}
+
 function appStarter() {
-    //fetchAllDrinks()
     fetchTwentyDrinks()
 }
 
