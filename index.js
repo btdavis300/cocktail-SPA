@@ -40,6 +40,8 @@ let cocktailImage = document.getElementById('cocktail-image')
 let cocktailIngredients = document.getElementById('ingredients')
 let cocktailInstructions = document.getElementById('instructions')
 let browse = document.getElementById('browse')
+let searchBar = document.getElementById('search-bar')
+let searchForm = document.getElementById('search-bar-form')
 
 //Event Listeners
 forwardButton.addEventListener('click', forwardPage)
@@ -47,6 +49,14 @@ backButton.addEventListener('click', backwardPage)
 nonAlcoholic.addEventListener('click', fetchNonAlcoholic)
 browse.addEventListener('click', fetchTwentyDrinks)
 
+
+//Search Functions
+searchForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    let searchInput = searchBar.value
+    fetchSearch(searchInput)
+
+})
 
 //Navigational Bar Functions
 alcoholCat.onmouseover = function () {
@@ -135,6 +145,15 @@ function fetchNonAlcoholic() {
         .then(drinksArr => {
             const result = drinksArr.filter(drink => drink.strAlcoholic == "Non alcoholic" || drink.strAlcoholic == "Optional alcohol")
             renderImages(result)
+        })
+}
+
+function fetchSearch(searchInput) {
+    fetch(baseURL)
+        .then(r => r.json())
+        .then(drinksArr => {
+            const result = drinksArr.find(drink => drink.strDrink == searchInput)
+            displayCocktail(result)
         })
 }
 
