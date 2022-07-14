@@ -14,8 +14,6 @@ User Stories:
 
 -As a user, I can post reviews, including rating and descriptions.
 
--As a user, I can like individual cocktails, as well as adding them to "My Favorites."
-
 -When the page first loads, as a user, I can view popular drinks.
 
 
