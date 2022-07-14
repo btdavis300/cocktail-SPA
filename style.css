@@ -59,7 +59,7 @@ header {
     background: #f9fff4;
     box-shadow: 7px 7px 14px #cfd4cb,
         -7px -7px 14px #ffffff;
-    width: 130px;
+    width: 200px;
     padding-left: 5px;
     padding-right: 5px;
     -webkit-transition: width 0.4s ease-in-out;
@@ -122,6 +122,21 @@ li {
     padding-left: 5px;
     padding-right: 5px;
 }
+
+/* New Cocktail Form Styles */
+#new-cocktail-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#form1,
+#form2,
+#form3 {
+    margin: 15px;
+}
+
+
 
 /* Cocktail Container Styles */
 #display-cocktail-container {

@@ -61,7 +61,11 @@ function newCocktailForm() {
     const newForm = document.getElementById("new-cocktail-form")
     const newName = document.getElementById('cocktail-name-input')
     const newImage = document.getElementById('cocktail-image-input')
-    const newIngredients = document.getElementById('cocktail-ingredients-input')
+    const newIngredients1 = document.getElementById('ingredient1')
+    const newIngredients2 = document.getElementById('ingredient2')
+    const newIngredients3 = document.getElementById('ingredient3')
+    const newIngredients4 = document.getElementById('ingredient4')
+    const newIngredients5 = document.getElementById('ingredient5')
     const newInstructions = document.getElementById('cocktail-instructions-input')
     const newCategory = document.getElementById('alcohol-base')
 
@@ -70,7 +74,11 @@ function newCocktailForm() {
         let newCocktail = {
             strDrink: newName.value,
             strDrinkThumb: newImage.value,
-            strIngredient1: newIngredients.value,
+            strIngredient1: newIngredients1.value,
+            strIngredient2: newIngredients2.value,
+            strIngredient3: newIngredients3.value,
+            strIngredient4: newIngredients4.value,
+            strIngredient5: newIngredients5.value,
             strInstructions: newInstructions.value,
             alcCategory: newCategory.value,
         }

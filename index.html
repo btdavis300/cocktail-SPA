@@ -50,7 +50,7 @@
 
         <!-- The Modal -->
         <div class="modal fade" id="myModal">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
                 <div class="modal-content">
 
                     <!-- Modal Header -->
@@ -62,28 +62,44 @@
                     <!-- Modal body -->
                     <div class="modal-body">
                         <form id="new-cocktail-form">
-                            <input type="text" class="submit" name="cocktail-name-input" id="cocktail-name-input"
-                                placeholder="New Cocktail Name">
+                            <div id="form1">
+                                <input type="text" class="submit" name="cocktail-name-input" id="cocktail-name-input"
+                                    placeholder="Cocktail Name">
 
-                            <input type="text" class="submit" name="cocktail-image-input" id="cocktail-image-input"
-                                placeholder="New Cocktail Image Url">
+                                <input type="text" class="submit" name="cocktail-image-input" id="cocktail-image-input"
+                                    placeholder="Cocktail Image Url">
+                            </div>
+                            <div id="form2">
+                                <input type="text" class="submit" name="ingredient1" id="ingredient1"
+                                    placeholder="First Cocktail Ingredient">
 
-                            <input type="text" class="submit" name="cocktail-ingredients-input"
-                                id="cocktail-ingredients-input" placeholder="New Cocktail Ingredients">
+                                <input type="text" class="submit" name="ingredient2" id="ingredient2"
+                                    placeholder="Second Cocktail Ingredient">
 
-                            <input type="text" class="submit" name="cocktail-instructions-input"
-                                id="cocktail-instructions-input" placeholder="New Cocktail Instructions">
+                                <input type="text" class="submit" name="ingredient3" id="ingredient3"
+                                    placeholder="Third Cocktail Ingredient">
 
-                            <label for="alcohol-base">Alcohol Base:</label>
-                            <select id="alcohol-base" name="alcohol-base">
-                                <option value="brandy">Brandy</option>
-                                <option value="gin">Gin</option>
-                                <option value="rum">Rum</option>
-                                <option value="tequila">Tequila</option>
-                                <option value="vodka">Vodka</option>
-                                <option value="whiskey">Whiskey</option>
+                                <input type="text" class="submit" name="ingredient4" id="ingredient4"
+                                    placeholder="Fourth Cocktail Ingredient">
 
-                                <input type="submit" value="Create Cocktail" data-bs-dismiss="modal">
+                                <input type="text" class="submit" name="ingredient5" id="ingredient5"
+                                    placeholder="Fifth Cocktail Ingredient">
+                            </div>
+                            <div id="form3">
+                                <input type="text" class="submit" name="cocktail-instructions-input"
+                                    id="cocktail-instructions-input" placeholder="Cocktail Instructions">
+
+                                <label for="alcohol-base">Alcohol Base:</label>
+                                <select id="alcohol-base" name="alcohol-base">
+                                    <option value="brandy">Brandy</option>
+                                    <option value="gin">Gin</option>
+                                    <option value="rum">Rum</option>
+                                    <option value="tequila">Tequila</option>
+                                    <option value="vodka">Vodka</option>
+                                    <option value="whiskey">Whiskey</option>
+
+                                    <input type="submit" value="Create Cocktail" data-bs-dismiss="modal">
+                            </div>
                         </form>
                     </div>
 
