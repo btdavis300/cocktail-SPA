@@ -116,25 +116,29 @@ function renderImages(drinksArr) {
 }
 
 function displayCocktail(drink) {
-    cocktailName.textContent = drink.strDrink
-    cocktailImage.src = drink.strDrinkThumb
-    cocktailInstructions.textContent = drink.strInstructions
+    if (drink.strDrink === undefined) {
+        alert("Drink not found")
+    } else {
+        cocktailName.textContent = drink.strDrink
+        cocktailImage.src = drink.strDrinkThumb
+        cocktailInstructions.textContent = drink.strInstructions
 
-    const ing1 = document.getElementById('ing1')
-    const ing2 = document.getElementById('ing2')
-    const ing3 = document.getElementById('ing3')
-    const ing4 = document.getElementById('ing4')
-    const ing5 = document.getElementById('ing5')
-    const ing6 = document.getElementById('ing6')
-    const ing7 = document.getElementById('ing7')
+        const ing1 = document.getElementById('ing1')
+        const ing2 = document.getElementById('ing2')
+        const ing3 = document.getElementById('ing3')
+        const ing4 = document.getElementById('ing4')
+        const ing5 = document.getElementById('ing5')
+        const ing6 = document.getElementById('ing6')
+        const ing7 = document.getElementById('ing7')
 
-    ing1.textContent = drink.strIngredient1
-    ing2.textContent = drink.strIngredient2
-    ing3.textContent = drink.strIngredient3
-    ing4.textContent = drink.strIngredient4
-    ing5.textContent = drink.strIngredient5
-    ing6.textContent = drink.strIngredient6
-    ing7.textContent = drink.strIngredient7
+        ing1.textContent = drink.strIngredient1
+        ing2.textContent = drink.strIngredient2
+        ing3.textContent = drink.strIngredient3
+        ing4.textContent = drink.strIngredient4
+        ing5.textContent = drink.strIngredient5
+        ing6.textContent = drink.strIngredient6
+        ing7.textContent = drink.strIngredient7
+    }
 
 }
 
@@ -198,7 +202,11 @@ function fetchSearch(searchInput) {
         .then(r => r.json())
         .then(drinksArr => {
             const result = drinksArr.find(drink => drink.strDrink.toUpperCase() == searchInput)
-            displayCocktail(result)
+            if (result === undefined) {
+                alert("Drink not found")
+            } else {
+                displayCocktail(result)
+            }
         })
 }
 
