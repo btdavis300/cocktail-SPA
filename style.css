@@ -143,6 +143,7 @@ li {
     display: flex;
     justify-content: space-evenly;
     margin: 40px;
+    height: 270px;
 }
 
 .displays {
@@ -163,6 +164,10 @@ li {
     background: linear-gradient(145deg, #ffffff, #e6e6e6);
     box-shadow: 7px 7px 14px #d4d4d4,
         -7px -7px 14px #ffffff;
+}
+
+#cocktail-contents {
+    overflow-y: scroll;
 }
 
 /* Button Styles */
@@ -202,7 +207,8 @@ li {
 #browse {
     display: flex;
     justify-content: center;
-    margin: 10px;
+    margin-top: 50px;
+    margin-bottom: 10px;
     padding: 5px;
     font-size: 18px;
     cursor: pointer;
