@@ -1,30 +1,3 @@
-//HTML code for new submit form
-//  <div>
-// <form id="new-cocktail-form">
-//     <input type="text" name="cocktail-name-input" id="cocktail-name-input" placeholder="New Cocktail Name">
-
-//     <input type="text" name="cocktail-image-input" id="cocktail-image-input"
-//         placeholder="New Cocktail Image Url">
-
-//     <input type="text" name="cocktail-ingredients-input" id="cocktail-ingredients-input"
-//         placeholder="New Cocktail ingredients">
-
-//     <input type="text" name="cocktail-instructions-input" id="cocktail-instructions-input"
-//         placeholder="New Cocktail instructions">
-
-//     <label for="alcohol-base">Alcohol Base:</label>
-//     <select id="alcohol-base" name="alcohol-base">
-//         <option value="brandy">Brandy</option>
-//         <option value="gin">Gin</option>
-//         <option value="rum">Rum</option>
-//         <option value="tequila">Tequila</option>
-//         <option value="vodka">Vodka</option>
-//         <option value="whiskey">Whiskey</option>
-
-//         <input type="submit" value="Create Cocktail">
-// </form>
-//     </div>
-
 //Global Variables
 const baseURL = ("http://localhost:3000/drinks")
 let page = 1
@@ -41,6 +14,7 @@ let cocktailInstructions = document.getElementById('instructions')
 let browse = document.getElementById('browse')
 let searchBar = document.getElementById('search-bar')
 let searchForm = document.getElementById('search-bar-form')
+let mybutton = document.getElementById("myBtn");
 
 //Event Listeners
 forwardButton.addEventListener('click', forwardPage)
@@ -81,6 +55,28 @@ function grabType(e) {
     const alcohol = e.target.textContent
     filterType(alcohol)
     drinkList.style.display = "none"
+}
+
+function newCocktailForm() {
+    const newForm = document.getElementById("new-cocktail-form")
+    const newName = document.getElementById('cocktail-name-input')
+    const newImage = document.getElementById('cocktail-image-input')
+    const newIngredients = document.getElementById('cocktail-ingredients-input')
+    const newInstructions = document.getElementById('cocktail-instructions-input')
+    const newCategory = document.getElementById('alcohol-base')
+
+    newForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let newCocktail = {
+            strDrink: newName.value,
+            strDrinkThumb: newImage.value,
+            strIngredient1: newIngredients.value,
+            strInstructions: newInstructions.value,
+            alcCategory: newCategory.value,
+        }
+        displayCocktail(newCocktail)
+    })
+
 }
 
 //Render Image Functions
@@ -147,6 +143,24 @@ function backwardPage() {
     } else if (page = 1) {
         alert("You've gone too far. TURN BACK!")
     }
+}
+
+//Scroll Button Functions
+window.onscroll = () => {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
 
 
@@ -216,6 +230,7 @@ function filterMisc() {
 
 function appStarter() {
     fetchTwentyDrinks()
+    newCocktailForm()
 }
 
 appStarter()

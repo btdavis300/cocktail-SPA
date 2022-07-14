@@ -62,17 +62,17 @@
                     <!-- Modal body -->
                     <div class="modal-body">
                         <form id="new-cocktail-form">
-                            <input type="text" name="cocktail-name-input" id="cocktail-name-input"
+                            <input type="text" class="submit" name="cocktail-name-input" id="cocktail-name-input"
                                 placeholder="New Cocktail Name">
 
-                            <input type="text" name="cocktail-image-input" id="cocktail-image-input"
+                            <input type="text" class="submit" name="cocktail-image-input" id="cocktail-image-input"
                                 placeholder="New Cocktail Image Url">
 
-                            <input type="text" name="cocktail-ingredients-input" id="cocktail-ingredients-input"
-                                placeholder="New Cocktail ingredients">
+                            <input type="text" class="submit" name="cocktail-ingredients-input"
+                                id="cocktail-ingredients-input" placeholder="New Cocktail Ingredients">
 
-                            <input type="text" name="cocktail-instructions-input" id="cocktail-instructions-input"
-                                placeholder="New Cocktail instructions">
+                            <input type="text" class="submit" name="cocktail-instructions-input"
+                                id="cocktail-instructions-input" placeholder="New Cocktail Instructions">
 
                             <label for="alcohol-base">Alcohol Base:</label>
                             <select id="alcohol-base" name="alcohol-base">
@@ -83,13 +83,13 @@
                                 <option value="vodka">Vodka</option>
                                 <option value="whiskey">Whiskey</option>
 
-                                <input type="submit" value="Create Cocktail">
+                                <input type="submit" value="Create Cocktail" data-bs-dismiss="modal">
                         </form>
                     </div>
 
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="nav-buttons" data-bs-dismiss="modal">Close</button>
                     </div>
 
                 </div>
@@ -144,6 +144,7 @@
     <div id="cocktail-image-box">
         <div id="cocktail-image-container"></div>
     </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">&#8593 </button>
 </body>
 
 </html>

@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #f9fff4;
     font-family: "Bodoni MT", Didot, "Didot LT STD", "Book Antiqua", Garamond, "Times New Roman", serif;
@@ -5,6 +9,8 @@ body {
 
 /* Header Styles */
 header {
+    background-color: #f9fff4;
+    border-width: 5px;
     display: flex;
     justify-content: space-evenly;
     width: 100vw;
@@ -15,6 +21,7 @@ header {
 #title {
     display: flex;
     flex-direction: row;
+    align-items: baseline;
 }
 
 #wetail-icon {
@@ -45,7 +52,7 @@ header {
     cursor: pointer;
 }
 
-input[type=text] {
+.submit {
     border-radius: 10px;
     background: #f9fff4;
     box-shadow: 7px 7px 14px #cfd4cb,
@@ -57,8 +64,8 @@ input[type=text] {
     transition: width 0.4s ease-in-out;
 }
 
-/* When the input field gets focus, change its width to 100% */
-input[type=text]:focus {
+
+.submit:focus {
     width: 50%;
 }
 
@@ -95,11 +102,23 @@ h3 {
 }
 
 li {
+    position: sticky;
     list-style-type: none;
 }
 
 .li:hover {
     color: #000000;
+}
+
+/* Search Bar Styles */
+#search-bar {
+    border-radius: 10px;
+    background: #f9fff4;
+    box-shadow: 7px 7px 14px #cfd4cb,
+        -7px -7px 14px #ffffff;
+    width: 150px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 /* Cocktail Container Styles */
@@ -203,4 +222,25 @@ li {
     background: linear-gradient(145deg, #ffffff, #e6e6e6);
     box-shadow: 7px 7px 14px #d4d4d4,
         -7px -7px 14px #ffffff;
+}
+
+/* Scroll Button Styles */
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #e0e6dc;
+    color: rgb(16, 15, 15);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+#myBtn:hover {
+    background-color: #555;
 }
