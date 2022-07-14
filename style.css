@@ -29,7 +29,8 @@ header {
     height: 50px;
 }
 
-.nav-buttons {
+.nav-buttons,
+#nonAlcoholic {
     font-size: 16px;
     margin-top: 10px;
     background: #f9fff4;
@@ -41,7 +42,8 @@ header {
     cursor: pointer;
 }
 
-.nav-buttons:active {
+.nav-buttons:active,
+#nonAlcoholic:active {
     color: #674;
     box-shadow: inset 4px 4px 12px #c5c5c5,
         inset -4px -4px 12px #ffffff;
@@ -222,6 +224,7 @@ li {
     background: linear-gradient(145deg, #ffffff, #e6e6e6);
     box-shadow: 7px 7px 14px #d4d4d4,
         -7px -7px 14px #ffffff;
+    cursor: pointer;
 }
 
 /* Scroll Button Styles */

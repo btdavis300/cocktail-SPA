@@ -75,6 +75,8 @@ function newCocktailForm() {
             alcCategory: newCategory.value,
         }
         displayCocktail(newCocktail)
+        newForm.reset()
+        postNewCocktail(newCocktail)
     })
 
 }
@@ -226,6 +228,18 @@ function filterMisc() {
             displayCocktail(result[0])
             drinkList.style.display = "none"
         })
+}
+
+function postNewCocktail(cocktail) {
+    fetch(baseURL, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(cocktail)
+    })
+        .then(r => r.json())
+        .then(cocktail => console.log(cocktail))
 }
 
 function appStarter() {
