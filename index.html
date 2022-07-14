@@ -20,94 +20,92 @@
             <img src="cocktailicon.png" alt="WeTail icon" id="wetail-icon">
             <h1 id="wetail-logo">WeTail</h1>
         </div>
+
+        <h3 class="nav-bar" id="alcoholCat">Alcohol Categories
+            <div class="expand-content" id="alcoholList">
+                <li id="brandy" onclick="grabCategory(event)">Brandy</li>
+                <li class="li" onclick="grabCategory(event)">Gin</li>
+                <li class="li" onclick="grabCategory(event)">Rum</li>
+                <li class="li" onclick="grabCategory(event)">Tequila</li>
+                <li class="li" onclick="grabCategory(event)">Vodka</li>
+                <li class="li" onclick="grabCategory(event)">Whiskey</li>
+            </div>
+        </h3>
+        <h3 class="nav-bar" id="drinkTypes">Drink Types
+            <div class="expand-content" id="drinkList">
+                <li class="li" onclick="grabType(event)">Cocktail</li>
+                <li class="li" onclick="grabType(event)">Coffee / Tea</li>
+                <li class="li" onclick="grabType(event)">Ordinary Drink</li>
+                <li class="li" onclick="filterMisc()">Misc.</li>
+                <li class="li" onclick="grabType(event)">Shot</li>
+            </div>
+        </h3>
+        <h3 class="nav-bar" id="nonAlcoholic">Non-Alcoholic</h3>
+
+        <div id="make-your-own">
+            <button type="button" class="nav-buttons" data-bs-toggle="modal" data-bs-target="#myModal">
+                Make Your Own
+            </button>
+        </div>
+
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Make Your Own Cocktail</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form id="new-cocktail-form">
+                            <input type="text" name="cocktail-name-input" id="cocktail-name-input"
+                                placeholder="New Cocktail Name">
+
+                            <input type="text" name="cocktail-image-input" id="cocktail-image-input"
+                                placeholder="New Cocktail Image Url">
+
+                            <input type="text" name="cocktail-ingredients-input" id="cocktail-ingredients-input"
+                                placeholder="New Cocktail ingredients">
+
+                            <input type="text" name="cocktail-instructions-input" id="cocktail-instructions-input"
+                                placeholder="New Cocktail instructions">
+
+                            <label for="alcohol-base">Alcohol Base:</label>
+                            <select id="alcohol-base" name="alcohol-base">
+                                <option value="brandy">Brandy</option>
+                                <option value="gin">Gin</option>
+                                <option value="rum">Rum</option>
+                                <option value="tequila">Tequila</option>
+                                <option value="vodka">Vodka</option>
+                                <option value="whiskey">Whiskey</option>
+
+                                <input type="submit" value="Create Cocktail">
+                        </form>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
         <div id="search-bar-container">
             <form id="search-bar-form">
                 <input type="text" name="search-bar" id="search-bar" autocomplete="off" placeholder="Search by name:">
 
-                <button type="submit"><i class="fa fa-search"></i></button>
+                <button type="submit" class="nav-buttons"><i class="fa fa-search"></i></button>
             </form>
         </div>
     </header>
 
-    <div class="container mt-3">
-        <button type="button" data-bs-toggle="modal" data-bs-target="#myModal">
-            Make Your Own
-        </button>
-    </div>
 
-    <!-- The Modal -->
-    <div class="modal fade" id="myModal">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Make Your Own Cocktail</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <form id="new-cocktail-form">
-                        <input type="text" name="cocktail-name-input" id="cocktail-name-input"
-                            placeholder="New Cocktail Name">
-
-                        <input type="text" name="cocktail-image-input" id="cocktail-image-input"
-                            placeholder="New Cocktail Image Url">
-
-                        <input type="text" name="cocktail-ingredients-input" id="cocktail-ingredients-input"
-                            placeholder="New Cocktail ingredients">
-
-                        <input type="text" name="cocktail-instructions-input" id="cocktail-instructions-input"
-                            placeholder="New Cocktail instructions">
-
-                        <label for="alcohol-base">Alcohol Base:</label>
-                        <select id="alcohol-base" name="alcohol-base">
-                            <option value="brandy">Brandy</option>
-                            <option value="gin">Gin</option>
-                            <option value="rum">Rum</option>
-                            <option value="tequila">Tequila</option>
-                            <option value="vodka">Vodka</option>
-                            <option value="whiskey">Whiskey</option>
-
-                            <input type="submit" value="Create Cocktail">
-                    </form>
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div id="nav-bar-box">
-        <div id="nav-bar-container">
-            <h3 class="nav-bar" id="alcoholCat">Alcohol Categories
-                <div class="expand-content" id="alcoholList">
-                    <li id="brandy" onclick="grabCategory(event)">Brandy</li>
-                    <li class="li" onclick="grabCategory(event)">Gin</li>
-                    <li class="li" onclick="grabCategory(event)">Rum</li>
-                    <li class="li" onclick="grabCategory(event)">Tequila</li>
-                    <li class="li" onclick="grabCategory(event)">Vodka</li>
-                    <li class="li" onclick="grabCategory(event)">Whiskey</li>
-                </div>
-            </h3>
-            <h3 class="nav-bar" id="drinkTypes">Drink Types
-                <div class="expand-content" id="drinkList">
-                    <li class="li" onclick="grabType(event)">Cocktail</li>
-                    <li class="li" onclick="grabType(event)">Coffee / Tea</li>
-                    <li class="li" onclick="grabType(event)">Ordinary Drink</li>
-                    <li class="li" onclick="filterMisc()">Misc.</li>
-                    <li class="li" onclick="grabType(event)">Shot</li>
-                </div>
-            </h3>
-            <h3 class="nav-bar" id="nonAlcoholic">Non-Alcoholic</h3>
-            <h3 class="nav-bar" id="mOY">Make Your Own</h3>
-        </div>
-    </div>
     <div id="display-cocktail-container">
         <div class="displays">
             <div class="cocktail-contents">
@@ -140,8 +138,8 @@
         <h4 id="browse">Browse Cocktails</h4>
     </div>
     <div id="button">
-        <button id="backward"> back </button>
-        <button id="forward"> next </button>
+        <button class="scroll-button" id="backward"> back </button>
+        <button class="scroll-button" id="forward"> next </button>
     </div>
     <div id="cocktail-image-box">
         <div id="cocktail-image-container"></div>

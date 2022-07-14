@@ -6,7 +6,10 @@ body {
 /* Header Styles */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 50px;
+    overflow: visible;
 }
 
 #title {
@@ -19,10 +22,27 @@ header {
     height: 50px;
 }
 
-/* Search Bar Styles */
-#search-bar-container {
-    margin-top: 40px;
-    margin-right: 80px;
+.nav-buttons {
+    font-size: 16px;
+    margin-top: 10px;
+    background: #f9fff4;
+    border-radius: 0.5em;
+    border: 1px solid #f9fff4;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+        -6px -6px 12px #ffffff;
+    cursor: pointer;
+}
+
+.nav-buttons:active {
+    color: #674;
+    box-shadow: inset 4px 4px 12px #c5c5c5,
+        inset -4px -4px 12px #ffffff;
+}
+
+.nav-buttons:hover {
+    color: rgb(102, 119, 68);
+    cursor: pointer;
 }
 
 input[type=text] {
@@ -42,29 +62,8 @@ input[type=text]:focus {
     width: 50%;
 }
 
-/* Navigation Bar Styles */
-#nav-bar-box {
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-}
-
 h3 {
     font-size: 16px;
-}
-
-#nav-bar-container {
-    position: sticky;
-    display: flex;
-    justify-content: space-evenly;
-    width: 75vw;
-    height: 50px;
-    border-radius: 0.5em;
-    background: #f9fff4;
-    box-shadow: 7px 7px 14px #cfd4cb,
-        -7px -7px 14px #ffffff;
 }
 
 .nav-bar {
@@ -135,9 +134,10 @@ li {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+
 }
 
-button {
+.scroll-button {
     color: #090909;
     padding: 0.7em 1.7em;
     font-size: 10px;
@@ -151,7 +151,7 @@ button {
     cursor: pointer;
 }
 
-button:active {
+.scroll-button:active {
     color: #674;
     box-shadow: inset 4px 4px 12px #c5c5c5,
         inset -4px -4px 12px #ffffff;
