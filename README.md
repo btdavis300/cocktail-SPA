@@ -1,3 +1,5 @@
+///IMPORTANT/// must run server as local server; uses .json file as fake API.
+
 Pitch: 
 
 WeTail is a single-page application that contains all-things related to cocktails. WeTail provides a community for users to look up cocktails, post their own recipes, as well as rate and review cocktails.
