@@ -29,6 +29,14 @@ header {
     height: 50px;
 }
 
+#wetail-icon:hover {
+    cursor: pointer;
+}
+
+#wetail-logo:hover {
+    cursor: pointer;
+}
+
 .nav-buttons,
 #nonAlcoholic {
     font-size: 16px;

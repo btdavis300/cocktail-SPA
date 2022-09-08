@@ -1,5 +1,5 @@
 //Global Variables
-const baseURL = ("http://localhost:3000/drinks")
+const baseURL = ("https://phase-1-cocktail-spa.herokuapp.com/drinks")
 let page = 1
 let forwardButton = document.getElementById("forward")
 let backButton = document.getElementById('backward')
@@ -15,12 +15,17 @@ let browse = document.getElementById('browse')
 let searchBar = document.getElementById('search-bar')
 let searchForm = document.getElementById('search-bar-form')
 let mybutton = document.getElementById("myBtn");
+let navBarIcon = document.getElementById("wetail-icon");
+let navBarTitle = document.getElementById("wetail-logo");
+
 
 //Event Listeners
 forwardButton.addEventListener('click', forwardPage)
 backButton.addEventListener('click', backwardPage)
 nonAlcoholic.addEventListener('click', fetchNonAlcoholic)
 browse.addEventListener('click', fetchTwentyDrinks)
+navBarIcon.addEventListener('click', fetchTwentyDrinks)
+navBarTitle.addEventListener('click', fetchTwentyDrinks)
 
 //Search Functions
 searchForm.addEventListener('submit', (e) => {
